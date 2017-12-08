@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Admin Site</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="javascripts/app.js"></script>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body ng-app="comment" ng-controller="MainCtrl">
+  <div id="content">
+
+    <h1>Admin Site</h1>
+
+    <p>
+      <a href="index.html" class="btn btn-info btn-sm">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back
+      </a>
+    </p>
+
+    <form ng-submit="addComment()" style = "margin-top30px;">
+      Product Name: <input type="text" ng-model="formContent"></input><br>
+      Price: <input type="number" ng-model="formPrice"></input><br>
+      Picture URL: <input type="text" ng-model="formPic"></input><br>
+      <button type="submit">Add Product</button>
+    </form>
+
+    <div ng-repeat="comment in comments | orderBy: 'title'">
+      <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
+      {{comment.title}} - price {{comment.price}} - ordered: {{comment.upvotes}}     
+      <img class='avatar' ng-src="{{comment.picURL}}" />
+    </div>
+
+  </div>
+</body>
+</html>
