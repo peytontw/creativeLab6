@@ -1,8 +1,58 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 a {
   color: #00B7FF;
+}
+
+body {
+  font-family: Courier New;
+  font-size: 200%;
+}
+
+#instructions {
+  background-color: rgb(220,220,220);
+}
+
+#the-pixel {
+  position: absolute;
+  display: inline-block;
+  margin: 0 auto;
+  width: 1px;
+  height: 1px;
+  background-color: black;
+  visibility: hidden;
+}
+
+#pixel-container {
+  position: relative;
+  left: 35px;
+  top: 1px;
+  width: 3px;
+  height: 3px;
+  padding-top: 2px;
+  padding-left: 2px;
+  visibility: hidden;
+/* allowing this background color
+* allows for the user to easily spot
+* the pixel.
+  background-color: red;
+*/
+}
+
+#gameboard {
+  margin: 2px 2px 2px 2px;
+  width: 450px;
+  height: 375px;
+  border: 1px black solid;
+  padding: 2px 2px 2px 2px;
+  box-sizing: border-box;
+}
+
+#restart {
+  visibility: hidden;
+}
+
+#start, #restart {
+  width: 100px;
+  height: 50px;
+  font-family: Courier New;
+  font-size: 60%;
 }
