@@ -59,6 +59,7 @@
         document.getElementById("the-pixel").style.visibility = "hidden";
         document.getElementById("restart").style.visibility = "visible";
 
+        document.getElementById("color").value = points;
       } else {
         seconds = seconds - 0.1;
         t = setTimeout("countdown()", 100);
@@ -122,8 +123,8 @@
   <br><br><br>
 
   <form method="POST" action="/user/highscore">
-      <p>High Score:
-      <input type="text" id="color" name="color" ng-model="user.color"><br>
+      <label>New High Score: </label>
+      <input type="text" id="color" name="color" ng-model="user.color" value="" readonly><br>
       <input type="submit" id="save" value="Update High Score">
   </form>
 

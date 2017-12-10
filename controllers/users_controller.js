@@ -91,7 +91,7 @@ exports.highscore = function(req, res){
         req.session.msg = 'User Updated.';
         req.session.color = req.body.color;
       }
-      res.redirect('/user');
+      res.redirect('/');
     });
   });
 };
