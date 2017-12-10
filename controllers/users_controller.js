@@ -80,6 +80,21 @@ exports.updateUser = function(req, res){
     });
   });
 };
+exports.highscore = function(req, res){
+  User.findOne({ _id: req.session.user })
+  .exec(function(err, user) {
+    user.set('color', req.body.color);
+    user.save(function(err) {
+      if (err){
+        res.sessor.error = err;
+      } else {
+        req.session.msg = 'User Updated.';
+        req.session.color = req.body.color;
+      }
+      res.redirect('/user');
+    });
+  });
+};
 exports.deleteUser = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
